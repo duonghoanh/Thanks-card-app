@@ -1,0 +1,389 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+//  ---------------------------------Header---------------------------------------------------->
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+ $page__max-width: 1280px;
+ 
+ $col__header-pre__bg: #00252D;
+ $col__header__bg: #00313C;
+ 
+ $col__header-link__col: white;
+ $col__header-link__bg: transparent;
+ $col__header-link__col-hover: $col__header-link__col;
+ $col__header-link__bg-hover: #335962;
+ 
+ $col__search__col: white;
+ 
+ // Font weights
+ $font-weight__header__link: 600;
+ 
+ // Font size
+ $font-size__search__field: 2rem;
+ 
+ // Breakpoints
+ $breakpoint__large: 1280px;
+ 
+ // ------------------- /
+ // START HEADER SCSS
+ // ------------------- /
+.img-logo {
+  width: 100px;
+  height: 100px;
+}
+ .h {
+   width: 100%;
+   background: $col__header__bg;
+   overflow: hidden;
+   /* Setup */
+   a {
+     display: inline-block;
+     color: $col__header-link__col;
+     background: $col__header-link__bg;
+     font-weight: $font-weight__header__link;
+     text-decoration: none;
+     &:hover, &:focus, &:active {  
+       color: $col__header-link__col-hover;
+       background: $col__header-link__bg-hover;
+       text-decoration: none;
+     }
+     &.icon {
+       padding: 0.5rem;
+     }
+   }
+   /* Containers */
+   &__wrap {
+     width: 100%;
+     position: relative;
+     max-width: $page__max-width;
+     margin: auto;
+   }
+   /* Inner Containers */
+   &__logo {
+     padding: 0.5rem; 
+     a {
+       background: transparent;    
+       &:hover, &:focus, &:active {  
+         background: transparent; 
+       }
+     }
+   }
+   &__nav {
+     nav {
+       text-align: right;
+     }
+     ul {
+       display: inline-block;
+       list-style: none;
+       padding: 0;
+       margin: 0; 
+       text-align: right;
+     }
+     li {
+       display: inline-block;
+     }
+   }
+   /* Content */
+   &__pre {
+     position: relative;   
+     z-index: 10;
+     font-size: 0.9rem;
+     &:before, &:after {
+       content: "";
+       background: $col__header-pre__bg;
+       position: absolute;
+       height: 100%;
+       top: 0;   
+       z-index: -5;
+     }
+     &:before {
+       left: 0;
+       width: 10rem;
+       border-radius: 0 0 0 100%;
+     }
+     &:after {
+       left: 10rem;
+       width: 100vw;
+     }
+     a {
+       padding: 0.25rem 0.5rem;
+       border-radius: 3px;
+     }
+     &-space {
+       padding: 0.35rem 0; 
+     }
+   }
+   &__main { 
+     a {
+       padding: 0.5rem 1.15rem;
+       border-radius: 10rem;
+     }
+     &-primary {
+       width:100%;
+     }
+     &-secondary {
+       position: relative;
+       white-space: nowrap;
+     }
+     &-space {
+       padding: 1rem 0; 
+     }
+   }
+ }
+ 
+ 
+ 
+ .search {
+   /* Search holder container */
+   &__container {
+     position: absolute;
+     left: -100%;
+     top: 50%;
+     width: 100%;
+     -ms-transform: translateY(-50%);
+     -webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+     /* Width of search bar when in different contexts */
+     @media (min-width: $page__max-width) {
+       left: calc(-#{$page__max-width} + 100%);
+       width: calc(#{$page__max-width} - 100%); 
+     }
+     @media (max-width: $page__max-width) {
+       left: calc(-100vw + 100%);
+       width: calc(100vw - 100%); 
+     }
+   }
+   /* Search box */
+   &__box {
+     width: 100%;
+     font-size: $font-size__search__field;
+     background: transparent;
+     border: none;
+     outline: none;
+     padding: 0.5rem; 
+     color: $col__search__col;
+   }
+   /* when search has js state */
+   &-active {
+     /* show items when search is active */
+     .js__search-active &__show,
+     &__hide { // visible by default, hidden when 'search is active'
+       visibility: visible;
+       & > * {
+         margin-left: 0;
+         margin-right: 0; 
+         opacity:1;
+       }
+     }
+     /* hide items when search is active */
+     .js__search-active &__hide,
+     &__show { // hidden by default, visible when 'search is active'
+       visibility: hidden;
+       & > * {
+         margin-left: -100px;
+         margin-right: 100px;
+         opacity: 0;
+       }
+     }
+   }
+ }
+ 
+ 
+ 
+ 
+ .table-cols {
+   &__make {
+     display: table;
+     & > .col {
+       display: table-cell;
+     }
+   }
+ }
+ 
+ 
+ 
+ .align {
+   &__mid {
+     vertical-align: middle;
+   }
+ }
+//  <----------------------^^^^^^^^^^^^-----------/Header------------------------------^^^^---------------------->
+
+// -------------------------------fooiter---------------------------------------------------->
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+// <-------------------------------footer----------------------------------------------------

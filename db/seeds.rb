@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+# users = User.where(activated: true).take(6)
+30.times do
+  User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: 'Duong123',
+  )
+
+  # Feed.create(
+  #   id: Faker::Number.number(digits: 6),
+  #   content: Faker::Lorem.sentence,
+  #   user_id: User.all.sample.id,
+  # )
+
+
+end

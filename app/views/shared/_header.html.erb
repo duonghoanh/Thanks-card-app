@@ -2,21 +2,9 @@
   <div class="h__wrap table-cols__make">
     <div class="h__logo col align__mid"> 
       <div class="search-active__hide">
-        <a href="/" class="logo">
-        
+        <a href="/" class="logo"> 
  <img src="/assets/logo.png" alt="logo" class="img-logo"> 
-
-     <%
-=begin%>
- <%= image_tag 'logo.png' %> 
-<%
-=end%>
-   
-        <%
-=begin%>
- <a href="#">Logo goes here</a> 
-<%
-=end%>
+        </a>
       </div>
     </div>
     <div class="h__nav col">
@@ -27,7 +15,7 @@
         <nav class="h__main-primary h__main-space col search-active__hide">
           <ul>
             <li>
-              <a href="#">New</a>
+              <a href="#">New ThanksCard</a>
             </li>
             <li>
               <a href="#">Improve</a>
@@ -35,15 +23,17 @@
             <li>
               <a href="#">Count</a>
             </li>
-            <li>
-              <a href="#">Member</a>
-            </li>
+        <li>
+        <%= link_to "Users", users_path %>
+        </li>
             <li>
               <a href="#">History</a>
             </li>
             <li>
-              <a href="#">Profile</a>
+          <a href="#">Profile</a> 
             </li>
+
+
           </ul>
         </nav>
         <nav class="h__main-secondary col align__mid">
@@ -64,6 +54,28 @@
             </li>
           </ul>
         </nav>
+        
+ <% if logged_in? %>
+          <li><%= link_to "Users", users_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Account <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'Profile', current_user %></li>
+              <li><%= link_to 'Settings', 'edit_user_path(current_user)' %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to 'Log out', logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+        <% end %>
+
+
+
       </div>
     </div>
   </div>

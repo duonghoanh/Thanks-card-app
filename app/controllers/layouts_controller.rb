@@ -1,4 +1,5 @@
 class LayoutsController < ActionController::Base
+    include SessionsHelper
 
   def application
   end

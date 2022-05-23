@@ -1,2 +1,26 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide :title, 'Home' %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="feed_form">
+        <%= render 'shared/feed_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>feed Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1>Welcome to the Sample App</h1>
+    <h2>
+      This is the home page for the
+      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
+    </h2>
+    <%= link_to 'Sign up now!', new_user_path, class: 'btn btn-lg btn-primary' %>
+  </div>
+<% end %>

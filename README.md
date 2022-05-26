@@ -20,5 +20,4 @@ Things you may want to cover:
 
 * ...
 ![Screenshot 2022-05-27 at 04-40-53 Screenshot](https://user-images.githubusercontent.com/55520583/170586689-8747f334-695a-46bc-a39d-6ecf9dbe23c0.png)
-![Screenshot 2022-05-27 at 04-38-31 Screenshot](https://user-images.githubusercontent.com/55520583/170586703-79654a1d-e75e-4589-a93c-cd6e3f958f77.png)
 ![Screenshot 2022-05-27 at 04-37-28 Screenshot](https://user-images.githubusercontent.com/55520583/170586706-4654a839-0398-4248-ae3f-9b435ab7b418.png)

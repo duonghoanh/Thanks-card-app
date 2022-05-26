@@ -1,9 +1,10 @@
 # README
 
 ***
-#The application is still in development, deploying at the wrong time can cause the application to crash or crash.
+# The application is still in development, deploying at the wrong time can cause the application to crash or crash.
+# If you run the application crashes. Don't be sad, cause me too and I'm fixing it
 ***
-#If you run the application crashes. Don't be sad, cause me too and I'm fixing it
+
 Things you may want to cover:
 
 * Ruby version 3.0.3

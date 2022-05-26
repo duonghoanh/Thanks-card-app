@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
+***
+The application is still in development, deploying at the wrong time can cause the application to crash or crash.
+If you run the application crashes. Don't be sad, cause me too and I'm fixing it
+***
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 3.0.3
 
-* System dependencies
+* System dependencies:operating system Ubuntu 
 
 * Configuration
 
-* Database creation
+* Database initialization: Sqlite 3
 
-* Database initialization
+* How to run the test suite cmd: bundle ->rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...

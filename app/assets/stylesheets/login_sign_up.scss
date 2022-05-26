@@ -1,0 +1,157 @@
+// :root {
+// 	/* COLORS */
+// 	--white: #e9e9e9;
+// 	--gray: #333;
+// 	--blue: #0367a6;
+// 	--lightblue: #008997;
+
+// 	/* RADII */
+// 	--button-radius: 0.7rem;
+
+// 	/* SIZES */
+// 	--max-width: 758px;
+// 	--max-height: 420px;
+
+// 	font-size: 16px;
+// 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+// 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+// }
+
+// body {
+// 	background-color: var(--white);
+// 	background: url("https://res.cloudinary.com/dci1eujqw/image/upload/v1616769558/Codepen/waldemar-brandt-aThdSdgx0YM-unsplash_cnq4sb.jpg");
+// 	background-attachment: fixed;
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// }
+// input, textarea, select{
+// 	border: 1px solid #bbb;
+// 	width: auto;
+// padding: auto;
+// 	}
+// 	input {
+// 	height: auto !important;
+// 	}
+// #error_explanation {
+//   color: red;
+//   ul {
+//     color: red;
+//     margin: 0 0 30px;
+//   }
+// }
+// .col-md-6{
+// 	margin: auto;
+// 	width: 33.33%;
+// 	height:auto;
+// 	background-color: var(--lightblue);
+// 	border-radius: var(--button-radius);
+// 	background: url("https://res.cloudinary.com/dci1eujqw/image/upload/v1616769558/Codepen/waldemar-brandt-aThdSdgx0YM-unsplash_cnq4sb.jpg");
+	
+// }
+// .field_with_errors {
+//   // @extend .has-error;
+//   .form-control {
+//     Color: red;
+//   }
+// }
+
+
+body {
+  background: url(https://images.unsplash.com/photo-1450849608880-6f787542c88a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=b256aa5102c408322cdb99ce6a6a0f53) no-repeat;
+  background-size: cover;
+}
+
+.form-horizontal {
+  display: none;
+}
+
+.login-container {
+  position: relative;
+  width: 840px;
+  height: 300px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.col-left, .col-right {
+  width: 400px;
+  padding: 10px;
+  float: left;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background, color 0.3s ease-out;
+}
+.btn-outline:hover {
+  background: #fff;
+  color: #1F1F21;
+}
+
+.background-float {
+  position: absolute;
+  top: -20px;
+  bottom: -20px;
+  left: 20px;
+  width: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #fff;
+  color: #1F1F21;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
+  transition: left 1s cubic-bezier(0.68, -0.26, 0.21, 1.21);
+  z-index: 1;
+}
+.background-float form {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.4, 0, 1, 1);
+}
+.background-float form.register-form {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+.background-float form .form-control {
+  border-radius: 0;
+}
+
+[name=choose-login]:checked {
+  position: relative;
+  color: #1F1F21;
+  border-color: #1F1F21;
+  z-index: 1;
+}
+[name=choose-login]:checked + .background-float {
+  position: absolute;
+  left: 420px;
+}
+[name=choose-login]:checked + .background-float .register-form {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+[name=choose-login]:checked + .background-float .login-form {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}

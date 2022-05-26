@@ -12,30 +12,7 @@
        
       </div>
       <div class="h__main table-cols__make">
-        <nav class="h__main-primary h__main-space col search-active__hide">
-          <ul>
-            <li>
-              <a href="#">New ThanksCard</a>
-            </li>
-            <li>
-              <a href="#">Improve</a>
-            </li>
-            <li>
-              <a href="#">Count</a>
-            </li>
-        <li>
-        <%= link_to "Users", users_path %>
-        </li>
-            <li>
-              <a href="#">History</a>
-            </li>
-            <li>
-          <a href="#">Profile</a> 
-            </li>
-
-
-          </ul>
-        </nav>
+        
         <nav class="h__main-secondary col align__mid">
           <ul>
             <li class="search__wrap">
@@ -56,26 +33,31 @@
         </nav>
         
  <% if logged_in? %>
-          <li><%= link_to "Users", users_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'Profile', current_user %></li>
-              <li><%= link_to 'Settings', 'edit_user_path(current_user)' %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to 'Log out', logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
+ <nav class="h__main-primary h__main-space col search-active__hide">
+          <ul>
+          <%
+=begin%>
+ <li><%=link_to "feed", feeds_feed_content_path%></li> 
+<%
+=end%>
+          <li class="element_header"><%= link_to "New ThanksCard", root_path %></li>
+            <li class="element_header"><%= link_to "Users", users_path %></li>
+          <li class="element_header"><%= link_to "Profile", current_user %></li>
+          <li class="element_header"><%= link_to "Settings", edit_user_path(current_user) %></li>
+             <li class="element_header"><%= link_to 'Log out', logout_path, method: :delete %></li>
+          </ul>
+        </nav>
+    
+           
+
+
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+
+ <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Sign up", signup_path %></li> 
+
+
         <% end %>
-
-
-
       </div>
     </div>
   </div>

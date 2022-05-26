@@ -19,7 +19,7 @@
  $page__max-width: 1280px;
  
  $col__header-pre__bg: #00252D;
- $col__header__bg: #00313C;
+ $col__header__bg: #ffffff;
  
  $col__header-link__col: white;
  $col__header-link__bg: transparent;
@@ -51,7 +51,7 @@
    /* Setup */
    a {
      display: inline-block;
-     color: $col__header-link__col;
+     color: black;
      background: $col__header-link__bg;
      font-weight: $font-weight__header__link;
      text-decoration: none;
@@ -96,6 +96,9 @@
        display: inline-block;
      }
    }
+   .element_header{
+     color:black
+       }
    /* Content */
    &__pre {
      position: relative;   

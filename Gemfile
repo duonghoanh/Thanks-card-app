@@ -43,12 +43,13 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem 'kaminari'
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", require: false
-
+gem 'devise'
+gem 'bootsnap'
+gem 'therubyracer'
 # gem faker
 gem "faker"
 # gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
+gem 'coffee-rails'
 
 # Use Sass to process CSS
 gem "sassc-rails"
@@ -57,6 +58,8 @@ gem "sassc-rails"
 # gem "image_processing", "~> 1.2"
 gem 'webpacker'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

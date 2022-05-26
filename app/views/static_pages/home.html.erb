@@ -10,17 +10,58 @@
       </section>
     </aside>
     <div class="col-md-8">
-      <h3>feed Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
   <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
-    <h2>
-      This is the home page for the
-      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
-    </h2>
-    <%= link_to 'Sign up now!', new_user_path, class: 'btn btn-lg btn-primary' %>
+    
+
+<div class="login-container">
+  <div class="clearfix">
+    <div class="col-left">
+      <label class="btn btn-default btn-outline" for="register">Sign up</label>
+      <input class="hidden" type="radio" name="choose-login" checked="checked" id="register"/>
+    </div>
+    <div class="col-right">
+      <h4 class="text-uppercase">Have an account ?</h4>
+      
+      <label class="btn btn-default btn-outline" for="login">Login</label>
+      <input class="hidden" type="radio" name="choose-login" id="login"/>
+      <div class="background-float">
+        <form class="login-form">
+          <h3 class="text-primary text-uppercase">Login</h3>
+          <div class="form-group">
+            <input class="form-control" id="exampleInputEmail1" type="email" placeholder="Email"/>
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password"/>
+          </div>
+          <button class="btn btn-primary" type="submit"><%= link_to "Log in", login_path %></button>
+        </form>
+        <form class="register-form">
+          <h3 class="text-primary text-uppercase">Sign Up</h3>
+          <div class="form-group">
+            <input class="form-control" id="exampleInputEmail1" type="text" placeholder="Name"/>
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="exampleInputEmail1" type="email" placeholder="Email"/>
+          </div>
+          <div class="form-group">
+            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password"/>
+          </div>
+          <button class="btn btn-primary" type="submit"><%= link_to 'Sign up now!', new_user_path, class: 'btn btn-lg btn-primary' %> </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+      
+  
+    <%
+=begin%>
+ <%= link_to 'Sign up now!', new_user_path, class: 'btn btn-lg btn-primary' %> 
+<%
+=end%>
   </div>
 <% end %>

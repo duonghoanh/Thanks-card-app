@@ -10,10 +10,14 @@ class FeedsController < ApplicationController
   if @feed.save
     flash[:success] = 'feed created successfully'
     redirect_to root_path
+
     else
       render home_path
     end
   end
+def feed_content
+redirect_to feeds_feed_content_path
+end
 
 
     def destroy
@@ -29,15 +33,12 @@ class FeedsController < ApplicationController
 
   def feed_params
     params.require(:feed).permit(:content, :image)
-
   end
   def correct_user
     @feed = current_user.feeds.find_by(id: params[:id])
   return if @feed
-
   flash[:danger] = 'the feed doesn\'t exist'
   redirect_to root_url
-
   end
 
 end

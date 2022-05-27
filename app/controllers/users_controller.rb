@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 def post
   @user = User.find_by id: params[:id]
-
 end
 
   def show
@@ -61,7 +60,7 @@ end
   
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(user)
+    redirect_to(root_url) unless current_user?(@user)
   end
 
   private
@@ -72,7 +71,6 @@ end
 
     def logged_in_user
       return if logged_in?
-
       store_location
       flash[:danger] = 'Please log in.'
       redirect_to login_url

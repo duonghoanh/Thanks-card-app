@@ -4,18 +4,19 @@ class UsersController < ApplicationController
 
   def index
     @users = User.page(params[:page])
-
   end
-def post
-  @user = User.find_by id: params[:id]
-end
+
 
   def show
-    # @user = User.find_by!(id: params[:id])
-    @user = User.find_by id: params[:id]
-    # @feeds = @user.feeds.page(params[:page])
-    # @feeds = @user.feeds.paginate page: params[:page] if logged_in?
-    # @feed_items = current_user.feeds.paginate(page: params[:page]) if logged_in?
+    @user = User.all.find_by(params[:id])
+    @feed = Feed.all.find_by(params[:id])
+
+    @feeds = @user.feeds.paginate(page: params[:page])
+    @feed_items = @user.feeds.paginate(page: params[:page]) 
+    # if logged_in?
+
+  
+   
   end
 
   def new

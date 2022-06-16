@@ -1,22 +1,26 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-<aside class="col-md-4">
-<section class="user_info">
-<h1>
-<%= gravatar_for @user %>
-<%= @user.name %>
-<%=@user.email%>
-</h1>
-</section>
-</aside>
-<div class="col-md-8">
-    <% if @feeds.try(:any?) %>
-      <h3>feeds (<%= @feeds.size %>)</h3>
-      <ol class="feeds">
-        <%= render @feeds %>
-      </ol>
-      <%= paginate(@feeds, window: 2) %>
-    <% end %>
-  </div>
+ <div>
 
-</div>
+ <% User.all.each do |user| %>
+ 
+        <p><%= user.name %></p>
+        <p><%= user.email %></p>
+        <%
+=begin%>
+ <p><%= user.messenger %></p> 
+<%
+=end%>
+ <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+    </aside>
+    <div class="col-md-8">
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+       <span><%= link_to 'Show', user %></span>
+        <span><%= link_to 'Edit', edit_user_path(user) %></span>
+        <span><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+    <% end %>
+    </div>

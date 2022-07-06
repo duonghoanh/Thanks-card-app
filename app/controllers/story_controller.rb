@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   before_action :find_story, only: [:destroy, :show, :edit, :update]
 
   def index
-    @stories = Story.order('created_at DESC')
+    @stories = Story.order('created_at ASC')
   end
 
   def new

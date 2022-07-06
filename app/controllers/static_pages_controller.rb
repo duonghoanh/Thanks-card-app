@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
   include SessionsHelper
-
+  def index
+    @users = User.all
+  end
   def home
     if logged_in?
       @feed = current_user.feeds.build
